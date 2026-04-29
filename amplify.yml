@@ -1,0 +1,15 @@
+version: 1
+applications:
+  - frontend:
+      phases:
+        build:
+          commands: []
+      artifacts:
+        baseDirectory: /
+        files:
+          - '**/*'
+    appRoot: .
+backend:
+    phases:
+      build:
+        commands: []
