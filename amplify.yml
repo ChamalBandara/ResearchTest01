@@ -2,14 +2,19 @@ version: 1
 applications:
   - frontend:
       phases:
+        preBuild:
+          commands:
+            - echo "Building container"
         build:
-          commands: []
+          commands:
+            - docker build -t vuln-detector .
       artifacts:
-        baseDirectory: /
+        baseDirectory: dist
         files:
           - '**/*'
     appRoot: .
 backend:
-    phases:
-      build:
-        commands: []
+  phases:
+    build:
+      commands:
+        - echo "No backend"
